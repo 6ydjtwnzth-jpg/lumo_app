@@ -1,0 +1,9 @@
+{
+  "name": "Lumo · Modalità crociera",
+  "short_name": "Lumo",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#FFFAF4",
+  "theme_color": "#5B2EE5",
+  "lang": "it"
+}

@@ -1,0 +1,569 @@
+{
+  "id": "napoli",
+  "city": {
+    "it": "Napoli",
+    "en": "Naples"
+  },
+  "terminal": {
+    "name": {
+      "it": "Stazione Marittima",
+      "en": "Stazione Marittima cruise terminal"
+    },
+    "coords": {
+      "lat": 40.8377,
+      "lng": 14.2562
+    }
+  },
+  "controlsMinutes": 15,
+  "pois": [
+    {
+      "id": "plebiscito",
+      "name": {
+        "it": "Piazza del Plebiscito",
+        "en": "Piazza del Plebiscito"
+      },
+      "category": "storia",
+      "icon": "pantheon",
+      "hidden": false,
+      "coords": {
+        "lat": 40.8359,
+        "lng": 14.2486
+      },
+      "visitMinutes": 20,
+      "summary": {
+        "it": "La piazza più grande della città, tra Palazzo Reale e il colonnato di San Francesco di Paola.",
+        "en": "The city's largest square, between the Royal Palace and the colonnade of San Francesco di Paola."
+      },
+      "curiosities": [
+        {
+          "it": "Il nome ricorda il plebiscito del 1860 che unì Napoli al Regno d'Italia.",
+          "en": "The name recalls the 1860 plebiscite that joined Naples to the Kingdom of Italy."
+        },
+        {
+          "it": "La basilica di San Francesco di Paola si ispira al Pantheon di Roma.",
+          "en": "The basilica of San Francesco di Paola is inspired by Rome's Pantheon."
+        },
+        {
+          "it": "Si dice che attraversare la piazza a occhi chiusi passando tra le due statue equestri sia quasi impossibile: prova.",
+          "en": "They say walking blindfolded across the square between the two equestrian statues is almost impossible: give it a try."
+        }
+      ],
+      "ticket": {
+        "required": false
+      },
+      "verified": false
+    },
+    {
+      "id": "galleria-umberto",
+      "name": {
+        "it": "Galleria Umberto I",
+        "en": "Galleria Umberto I"
+      },
+      "category": "arte",
+      "icon": "museo",
+      "hidden": false,
+      "coords": {
+        "lat": 40.8386,
+        "lng": 14.2497
+      },
+      "visitMinutes": 10,
+      "summary": {
+        "it": "Galleria coperta di fine Ottocento con una cupola di vetro e ferro.",
+        "en": "A late 19th-century shopping arcade under a glass and iron dome."
+      },
+      "curiosities": [
+        {
+          "it": "Fu completata nel 1890: alza lo sguardo verso la cupola.",
+          "en": "It was completed in 1890: look up at the dome."
+        }
+      ],
+      "ticket": {
+        "required": false
+      },
+      "verified": false
+    },
+    {
+      "id": "teatro-san-carlo",
+      "name": {
+        "it": "Teatro di San Carlo",
+        "en": "Teatro di San Carlo"
+      },
+      "category": "arte",
+      "icon": "museo",
+      "hidden": false,
+      "coords": {
+        "lat": 40.8376,
+        "lng": 14.2496
+      },
+      "visitMinutes": 15,
+      "summary": {
+        "it": "Uno dei teatri d'opera più antichi d'Europa ancora in attività.",
+        "en": "One of Europe's oldest opera houses still in use."
+      },
+      "curiosities": [
+        {
+          "it": "Fu inaugurato nel 1737, decenni prima della Scala di Milano.",
+          "en": "It opened in 1737, decades before Milan's La Scala."
+        }
+      ],
+      "ticket": {
+        "required": true,
+        "note": {
+          "it": "Visite guidate a orari fissi",
+          "en": "Guided tours at set times"
+        }
+      },
+      "verified": false
+    },
+    {
+      "id": "maschio-angioino",
+      "name": {
+        "it": "Maschio Angioino",
+        "en": "Castel Nuovo (Maschio Angioino)"
+      },
+      "category": "storia",
+      "icon": "torre",
+      "hidden": false,
+      "coords": {
+        "lat": 40.8384,
+        "lng": 14.2527
+      },
+      "visitMinutes": 30,
+      "summary": {
+        "it": "Il castello con le cinque torri davanti al porto.",
+        "en": "The five-towered castle facing the port."
+      },
+      "curiosities": [
+        {
+          "it": "Fu voluto da Carlo I d'Angiò nel Duecento: si chiama ancora «Castel Nuovo».",
+          "en": "Built for Charles I of Anjou in the 13th century, it is still called the «New Castle»."
+        }
+      ],
+      "ticket": {
+        "required": true,
+        "note": {
+          "it": "Biglietto per il museo civico",
+          "en": "Ticket for the civic museum"
+        }
+      },
+      "verified": false
+    },
+    {
+      "id": "metro-toledo",
+      "name": {
+        "it": "Stazione Toledo della metro",
+        "en": "Toledo metro station"
+      },
+      "category": "arte",
+      "icon": "gemma",
+      "hidden": true,
+      "coords": {
+        "lat": 40.8423,
+        "lng": 14.2487
+      },
+      "visitMinutes": 10,
+      "summary": {
+        "it": "Una stazione della metro che sembra di stare sott'acqua, tra luci e mosaici blu.",
+        "en": "A metro station that feels like being underwater, with blue light and mosaics."
+      },
+      "curiosities": [
+        {
+          "it": "È spesso citata tra le stazioni della metro più belle d'Europa.",
+          "en": "It is often listed among Europe's most beautiful metro stations."
+        }
+      ],
+      "ticket": {
+        "required": true,
+        "note": {
+          "it": "Serve un biglietto della metro",
+          "en": "You need a metro ticket"
+        }
+      },
+      "verified": false,
+      "localTip": {
+        "it": "Scendi le scale mobili e guarda in alto verso il «cratere di luce».",
+        "en": "Ride down the escalators and look up at the «crater of light»."
+      }
+    },
+    {
+      "id": "quartieri-spagnoli",
+      "name": {
+        "it": "Quartieri Spagnoli",
+        "en": "Spanish Quarter"
+      },
+      "category": "storia",
+      "icon": "scarpa",
+      "hidden": true,
+      "coords": {
+        "lat": 40.8418,
+        "lng": 14.246
+      },
+      "visitMinutes": 20,
+      "summary": {
+        "it": "Vicoli stretti, panni stesi e murales: la Napoli più autentica, a due passi da via Toledo.",
+        "en": "Narrow alleys, hanging laundry and murals: the most authentic Naples, steps from Via Toledo."
+      },
+      "curiosities": [
+        {
+          "it": "Nacquero nel Cinquecento per ospitare le truppe spagnole.",
+          "en": "They were built in the 16th century to house Spanish troops."
+        }
+      ],
+      "ticket": {
+        "required": false
+      },
+      "verified": false,
+      "localTip": {
+        "it": "Entra da via Toledo e lasciati guidare dai murales.",
+        "en": "Enter from Via Toledo and follow the murals."
+      }
+    },
+    {
+      "id": "chiostro-santa-chiara",
+      "name": {
+        "it": "Chiostro di Santa Chiara",
+        "en": "Santa Chiara cloister"
+      },
+      "category": "arte",
+      "icon": "giardino",
+      "hidden": true,
+      "coords": {
+        "lat": 40.8467,
+        "lng": 14.2525
+      },
+      "visitMinutes": 30,
+      "summary": {
+        "it": "Un giardino silenzioso con panche e colonne rivestite di maioliche colorate.",
+        "en": "A quiet garden with benches and columns covered in colourful majolica tiles."
+      },
+      "curiosities": [
+        {
+          "it": "Le maioliche sono del Settecento e raccontano scene di vita quotidiana.",
+          "en": "The majolica tiles date from the 18th century and show scenes of everyday life."
+        }
+      ],
+      "ticket": {
+        "required": true,
+        "note": {
+          "it": "Biglietto per chiostro e museo",
+          "en": "Ticket for cloister and museum"
+        }
+      },
+      "verified": false
+    },
+    {
+      "id": "san-gregorio-armeno",
+      "name": {
+        "it": "Via San Gregorio Armeno",
+        "en": "Via San Gregorio Armeno"
+      },
+      "category": "arte",
+      "icon": "chiesa",
+      "hidden": false,
+      "coords": {
+        "lat": 40.8507,
+        "lng": 14.2576
+      },
+      "visitMinutes": 20,
+      "summary": {
+        "it": "La strada dei presepi: botteghe artigiane aperte tutto l'anno.",
+        "en": "The street of nativity scenes: craft workshops open all year round."
+      },
+      "curiosities": [
+        {
+          "it": "Accanto alle statuine tradizionali trovi anche personaggi famosi di oggi.",
+          "en": "Next to traditional figurines you'll find today's celebrities too."
+        }
+      ],
+      "ticket": {
+        "required": false
+      },
+      "verified": false
+    },
+    {
+      "id": "cappella-sansevero",
+      "name": {
+        "it": "Cappella Sansevero",
+        "en": "Sansevero Chapel"
+      },
+      "category": "arte",
+      "icon": "curiosita",
+      "hidden": false,
+      "coords": {
+        "lat": 40.8494,
+        "lng": 14.2547
+      },
+      "visitMinutes": 30,
+      "summary": {
+        "it": "Custodisce il Cristo velato: un velo di marmo che sembra stoffa.",
+        "en": "Home of the Veiled Christ: a marble veil that looks like fabric."
+      },
+      "curiosities": [
+        {
+          "it": "Il Cristo velato è di Giuseppe Sanmartino, del 1753.",
+          "en": "The Veiled Christ was carved by Giuseppe Sanmartino in 1753."
+        },
+        {
+          "it": "Una leggenda dice che il velo sia stato ottenuto con un procedimento alchemico: in realtà è tutto scolpito nel marmo.",
+          "en": "A legend says the veil was made by alchemy: in fact it is all carved from marble."
+        }
+      ],
+      "ticket": {
+        "required": true,
+        "note": {
+          "it": "Biglietto a orario: meglio prenotare",
+          "en": "Timed ticket: book ahead"
+        }
+      },
+      "verified": false
+    },
+    {
+      "id": "duomo",
+      "name": {
+        "it": "Duomo di Napoli",
+        "en": "Naples Cathedral"
+      },
+      "category": "chiese",
+      "icon": "chiesa",
+      "hidden": false,
+      "coords": {
+        "lat": 40.8524,
+        "lng": 14.2599
+      },
+      "visitMinutes": 20,
+      "summary": {
+        "it": "La cattedrale della città, legata al culto di San Gennaro.",
+        "en": "The city's cathedral, tied to the cult of Saint Januarius."
+      },
+      "curiosities": [
+        {
+          "it": "Tre volte l'anno si attende il «miracolo» dello scioglimento del sangue di San Gennaro.",
+          "en": "Three times a year the city awaits the «miracle» of Saint Januarius' blood liquefying."
+        }
+      ],
+      "ticket": {
+        "required": false
+      },
+      "verified": false
+    },
+    {
+      "id": "napoli-sotterranea",
+      "name": {
+        "it": "Napoli Sotterranea",
+        "en": "Naples Underground"
+      },
+      "category": "storia",
+      "icon": "gemma",
+      "hidden": true,
+      "coords": {
+        "lat": 40.8509,
+        "lng": 14.2568
+      },
+      "visitMinutes": 75,
+      "summary": {
+        "it": "Cunicoli e cisterne greco-romane a 40 metri sotto il centro storico.",
+        "en": "Greek and Roman tunnels and cisterns 40 metres below the old town."
+      },
+      "curiosities": [
+        {
+          "it": "Durante la Seconda guerra mondiale le cisterne furono usate come rifugi antiaerei.",
+          "en": "During World War II the cisterns were used as air-raid shelters."
+        }
+      ],
+      "ticket": {
+        "required": true,
+        "note": {
+          "it": "Solo con visita guidata",
+          "en": "Guided tour only"
+        }
+      },
+      "verified": false
+    },
+    {
+      "id": "pizza-portafoglio",
+      "name": {
+        "it": "Pizza a portafoglio",
+        "en": "Folded «wallet» pizza"
+      },
+      "category": "cibo",
+      "icon": "pizza",
+      "hidden": false,
+      "coords": {
+        "lat": 40.851,
+        "lng": 14.2562
+      },
+      "visitMinutes": 20,
+      "summary": {
+        "it": "Pizza piegata in quattro e mangiata in piedi: il pranzo veloce dei napoletani.",
+        "en": "Pizza folded in four and eaten on the go: the Neapolitan quick lunch."
+      },
+      "curiosities": [
+        {
+          "it": "Si chiama «a portafoglio» perché, piegata, ricorda un portafoglio.",
+          "en": "It's called «wallet» pizza because, folded, it looks like a wallet."
+        }
+      ],
+      "ticket": {
+        "required": false
+      },
+      "verified": false,
+      "localTip": {
+        "it": "Cercala lungo via dei Tribunali.",
+        "en": "Look for it along Via dei Tribunali."
+      }
+    },
+    {
+      "id": "sfogliatella",
+      "name": {
+        "it": "Sfogliatella calda",
+        "en": "Warm sfogliatella"
+      },
+      "category": "cibo",
+      "icon": "gelato",
+      "hidden": false,
+      "coords": {
+        "lat": 40.8398,
+        "lng": 14.249
+      },
+      "visitMinutes": 15,
+      "summary": {
+        "it": "Il dolce di sfoglia croccante ripieno di ricotta, da mangiare appena sfornato.",
+        "en": "Crispy layered pastry filled with ricotta, best straight from the oven."
+      },
+      "curiosities": [
+        {
+          "it": "Le sue origini si fanno risalire a un monastero della Costiera amalfitana.",
+          "en": "Its origins are traced to a monastery on the Amalfi Coast."
+        }
+      ],
+      "ticket": {
+        "required": false
+      },
+      "verified": false
+    },
+    {
+      "id": "monte-echia",
+      "name": {
+        "it": "Belvedere di Monte Echia",
+        "en": "Monte Echia viewpoint"
+      },
+      "category": "panorami",
+      "icon": "panorama",
+      "hidden": true,
+      "coords": {
+        "lat": 40.8317,
+        "lng": 14.2466
+      },
+      "visitMinutes": 25,
+      "summary": {
+        "it": "La terrazza su golfo e Vesuvio dove, secondo la tradizione, nacque la città.",
+        "en": "The terrace over the bay and Vesuvius where, according to tradition, the city was born."
+      },
+      "curiosities": [
+        {
+          "it": "Qui sorgeva Parthenope, il primo insediamento greco da cui nasce Napoli.",
+          "en": "This was Parthenope, the first Greek settlement from which Naples grew."
+        }
+      ],
+      "ticket": {
+        "required": false
+      },
+      "verified": false,
+      "localTip": {
+        "it": "Sali dall'ascensore pubblico di Pizzofalcone per risparmiare la salita.",
+        "en": "Take the Pizzofalcone public lift to skip the climb."
+      }
+    },
+    {
+      "id": "castel-dell-ovo",
+      "name": {
+        "it": "Castel dell'Ovo",
+        "en": "Castel dell'Ovo"
+      },
+      "category": "storia",
+      "icon": "torre",
+      "hidden": false,
+      "coords": {
+        "lat": 40.8283,
+        "lng": 14.2474
+      },
+      "visitMinutes": 30,
+      "summary": {
+        "it": "Il castello sul mare con vista sul golfo e sul Borgo Marinari.",
+        "en": "The seaside castle overlooking the bay and the Borgo Marinari."
+      },
+      "curiosities": [
+        {
+          "it": "La leggenda dice che Virgilio nascose un uovo nelle fondamenta: se si rompe, la città è in pericolo.",
+          "en": "Legend says Virgil hid an egg in its foundations: if it breaks, the city is in danger."
+        }
+      ],
+      "ticket": {
+        "required": false
+      },
+      "verified": false
+    },
+    {
+      "id": "lungomare",
+      "name": {
+        "it": "Lungomare Caracciolo",
+        "en": "Caracciolo seafront"
+      },
+      "category": "panorami",
+      "icon": "panorama",
+      "hidden": false,
+      "coords": {
+        "lat": 40.8318,
+        "lng": 14.241
+      },
+      "visitMinutes": 30,
+      "summary": {
+        "it": "Passeggiata pedonale sul mare con il Vesuvio di fronte.",
+        "en": "A pedestrian seafront walk facing Vesuvius."
+      },
+      "curiosities": [
+        {
+          "it": "È pedonale dal 2012 ed è il posto dei napoletani per la passeggiata della sera.",
+          "en": "It has been pedestrian since 2012 and is where locals take their evening stroll."
+        }
+      ],
+      "ticket": {
+        "required": false
+      },
+      "verified": false
+    },
+    {
+      "id": "museo-archeologico",
+      "name": {
+        "it": "Museo Archeologico Nazionale",
+        "en": "National Archaeological Museum"
+      },
+      "category": "arte",
+      "icon": "museo",
+      "hidden": false,
+      "coords": {
+        "lat": 40.8536,
+        "lng": 14.2508
+      },
+      "visitMinutes": 90,
+      "summary": {
+        "it": "Uno dei grandi musei di archeologia classica, con i tesori di Pompei ed Ercolano.",
+        "en": "One of the great museums of classical archaeology, with treasures from Pompeii and Herculaneum."
+      },
+      "curiosities": [
+        {
+          "it": "Qui sono custoditi molti affreschi e mosaici portati via da Pompei.",
+          "en": "Many frescoes and mosaics removed from Pompeii are kept here."
+        }
+      ],
+      "ticket": {
+        "required": true,
+        "note": {
+          "it": "Biglietto d'ingresso",
+          "en": "Entry ticket"
+        }
+      },
+      "verified": false
+    }
+  ]
+}

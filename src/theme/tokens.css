@@ -1,0 +1,92 @@
+/* Lumo design tokens: every colour and size in the UI comes from here. */
+:root {
+  --ink: #22182e;
+  --ink-soft: #4a4155;
+  --muted: #6b6275;
+  --violet: #5b2ee5;
+  --violet-soft: #ebe4ff;
+  --on-violet: #fffaf4;
+  --sun: #ffc93c;
+  --sun-soft: #fff1c9;
+  --mint: #5ee0c8;
+  --mint-soft: #d9f8f1;
+  --peach: #ffe6cf;
+  --bg: #fffaf4;
+  --surface: #ffffff;
+  --line: #22182e;
+
+  --ok: #1f8a5b;
+  --ok-soft: #d9f8f1;
+  --soon: #9a6400;
+  --soon-soft: #fff1c9;
+  --now: #c2410c;
+  --now-soft: #ffe6cf;
+  --late: #c0262d;
+  --late-soft: #ffe0e1;
+
+  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  --radius-s: 12px;
+  --radius-m: 20px;
+  --radius-l: 28px;
+  --border: 2.5px;
+  --shadow: 0 4px 0 var(--line);
+  --tap: 48px;
+  --gap: 16px;
+  --max-width: 480px;
+  color-scheme: light;
+}
+
+/* Dark palette: follows the system, unless the page sets data-theme explicitly. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --ink: #f6f0ff;
+    --ink-soft: #d7cfe6;
+    --muted: #a99fbb;
+    --violet: #8f6bff;
+    --violet-soft: #2f2554;
+    --on-violet: #14101c;
+    --sun-soft: #3b3018;
+    --mint-soft: #173a35;
+    --peach: #3a2a22;
+    --bg: #14101c;
+    --surface: #1f1929;
+    --line: #000000;
+
+    --ok: #5ee0c8;
+    --ok-soft: #173a35;
+    --soon: #ffc93c;
+    --soon-soft: #3b3018;
+    --now: #ff9a5c;
+    --now-soft: #3a2a22;
+    --late: #ff6b70;
+    --late-soft: #3c1d22;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --ink: #f6f0ff;
+  --ink-soft: #d7cfe6;
+  --muted: #a99fbb;
+  --violet: #8f6bff;
+  --violet-soft: #2f2554;
+  --on-violet: #14101c;
+  --sun-soft: #3b3018;
+  --mint-soft: #173a35;
+  --peach: #3a2a22;
+  --bg: #14101c;
+  --surface: #1f1929;
+  --line: #000000;
+
+  --ok: #5ee0c8;
+  --ok-soft: #173a35;
+  --soon: #ffc93c;
+  --soon-soft: #3b3018;
+  --now: #ff9a5c;
+  --now-soft: #3a2a22;
+  --late: #ff6b70;
+  --late-soft: #3c1d22;
+  color-scheme: dark;
+}
