@@ -117,6 +117,22 @@ const DRAWINGS: Record<IconName, ReactNode> = {
       <path d="M12 55h40" fill="none" />
     </>
   ),
+  mappa: (
+    <>
+      <path d="M8 16l14-6 20 6 14-6v38l-14 6-20-6-14 6z" fill="#FFF1C9" />
+      <path d="M22 10v38M42 16v38" fill="none" />
+      <path d="M22 10l20 6v38l-20-6z" fill="#CDEBB8" />
+      <path d="M32 40s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z" fill="#5B2EE5" />
+      <circle cx="32" cy="28" r="2.5" fill="#FFC93C" />
+    </>
+  ),
+  biglietto: (
+    <>
+      <path d="M8 18h48v9a5 5 0 0 0 0 10v9H8v-9a5 5 0 0 0 0-10z" fill="#FFC93C" />
+      <path d="M42 19v26" fill="none" strokeDasharray="3 4" />
+      <path d="M16 28h18M16 36h12" fill="none" />
+    </>
+  ),
   scarpa: (
     <>
       <path d="M8 45c0-9 2-17 6-22l9 4c2 5 8 7 15 7 9 0 16 4 19 10v3H8z" fill="#9AD0F5" />

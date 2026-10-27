@@ -1,39 +1,80 @@
 /* Lumo design tokens: every colour and size in the UI comes from here. */
 :root {
+  /* Brand */
   --ink: #22182e;
   --ink-soft: #4a4155;
   --muted: #6b6275;
   --violet: #5b2ee5;
-  --violet-soft: #ebe4ff;
-  --on-violet: #fffaf4;
+  --violet-text: #4a23c9;
+  --violet-soft: #f0ebff;
+  --on-violet: #ffffff;
   --sun: #ffc93c;
-  --sun-soft: #fff1c9;
+  --sun-soft: #fff6d9;
   --mint: #5ee0c8;
-  --mint-soft: #d9f8f1;
+  --mint-soft: #e3f8f2;
+  --rose-soft: #fff0f4;
+  --sky-soft: #e7f1fb;
   --peach: #ffe6cf;
+
+  /* Surfaces */
   --bg: #fffaf4;
   --surface: #ffffff;
-  --line: #22182e;
+  --line: #eee6dc;
+  --line-strong: #e2d9ce;
+  --shadow-s: 0 2px 8px rgba(34, 24, 46, 0.12);
+  --shadow-m: 0 6px 18px rgba(34, 24, 46, 0.1);
+  --shadow-pin: 0 6px 16px rgba(34, 24, 46, 0.18);
+  --shadow-cta: 0 6px 16px rgba(91, 46, 229, 0.35);
+  --scrim: rgba(34, 24, 46, 0.78);
 
-  --ok: #1f8a5b;
-  --ok-soft: #d9f8f1;
-  --soon: #9a6400;
-  --soon-soft: #fff1c9;
-  --now: #c2410c;
-  --now-soft: #ffe6cf;
-  --late: #c0262d;
-  --late-soft: #ffe0e1;
+  /* Status */
+  --ok: #14532d;
+  --ok-soft: #e5f4e4;
+  --ok-ring: #5ee0c8;
+  --soon-ring: #ffc93c;
+  --now-ring: #ff9a5c;
+  --late-ring: #ff6b70;
+
+  /* Night screen (return timer) */
+  --night: #2e1d52;
+  --night-now: #4a1d3f;
+  --night-late: #5a1626;
+  --on-night: #ffffff;
+  --on-night-soft: #e3daff;
+  --night-glass: rgba(255, 255, 255, 0.1);
+  --night-track: rgba(255, 255, 255, 0.16);
+  --night-border: rgba(255, 255, 255, 0.6);
+
+  /* Illustrated map */
+  --map-ground: #f6efe3;
+  --map-sea: #bfe2f5;
+  --map-wave: #ffffff;
+  --map-park: #cdebb8;
+  --map-tree: #a9d98f;
+  --map-square: #f2dfc0;
+  --map-street: #ffffff;
+  --map-route: #5b2ee5;
+  --map-label: #6b6275;
+  --map-sea-label: #3d6f8f;
+
+  /* Illustrations */
+  --art-sky: #bfe2f5;
+  --art-sea: #6ec6f0;
+  --art-mountain: #8e7ab5;
+  --art-hill: #cdebb8;
+  --art-tree: #3e9e5a;
+  --art-cloud: #ffffff;
+  --art-line: #22182e;
 
   --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
   --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
 
-  --radius-s: 12px;
-  --radius-m: 20px;
+  --radius-s: 14px;
+  --radius-m: 18px;
   --radius-l: 28px;
-  --border: 2.5px;
-  --shadow: 0 4px 0 var(--line);
   --tap: 48px;
   --gap: 16px;
+  --nav-h: 68px;
   --max-width: 480px;
   color-scheme: light;
 }
@@ -45,23 +86,42 @@
     --ink-soft: #d7cfe6;
     --muted: #a99fbb;
     --violet: #8f6bff;
-    --violet-soft: #2f2554;
+    --violet-text: #b8a3ff;
+    --violet-soft: #2c2350;
     --on-violet: #14101c;
     --sun-soft: #3b3018;
     --mint-soft: #173a35;
+    --rose-soft: #3a2230;
+    --sky-soft: #1d3247;
     --peach: #3a2a22;
     --bg: #14101c;
     --surface: #1f1929;
-    --line: #000000;
-
-    --ok: #5ee0c8;
-    --ok-soft: #173a35;
-    --soon: #ffc93c;
-    --soon-soft: #3b3018;
-    --now: #ff9a5c;
-    --now-soft: #3a2a22;
-    --late: #ff6b70;
-    --late-soft: #3c1d22;
+    --line: #2e2640;
+    --line-strong: #3b3150;
+    --shadow-s: 0 2px 8px rgba(0, 0, 0, 0.45);
+    --shadow-m: 0 6px 18px rgba(0, 0, 0, 0.45);
+    --shadow-pin: 0 6px 16px rgba(0, 0, 0, 0.5);
+    --shadow-cta: 0 6px 16px rgba(0, 0, 0, 0.45);
+    --ok: #8ee6a8;
+    --ok-soft: #173a28;
+    --night: #1c1236;
+    --map-ground: #241d2f;
+    --map-sea: #1d3a55;
+    --map-wave: #3d6286;
+    --map-park: #24412f;
+    --map-tree: #2f5c3d;
+    --map-square: #3a3026;
+    --map-street: #3b3249;
+    --map-route: #b8a3ff;
+    --map-label: #a99fbb;
+    --map-sea-label: #8fc2e3;
+    --art-sky: #2a2350;
+    --art-sea: #1d3a55;
+    --art-mountain: #4e3f78;
+    --art-hill: #24412f;
+    --art-tree: #2f7a47;
+    --art-cloud: #3b3249;
+    --art-line: #0b0810;
     color-scheme: dark;
   }
 }
@@ -71,22 +131,41 @@
   --ink-soft: #d7cfe6;
   --muted: #a99fbb;
   --violet: #8f6bff;
-  --violet-soft: #2f2554;
+  --violet-text: #b8a3ff;
+  --violet-soft: #2c2350;
   --on-violet: #14101c;
   --sun-soft: #3b3018;
   --mint-soft: #173a35;
+  --rose-soft: #3a2230;
+  --sky-soft: #1d3247;
   --peach: #3a2a22;
   --bg: #14101c;
   --surface: #1f1929;
-  --line: #000000;
-
-  --ok: #5ee0c8;
-  --ok-soft: #173a35;
-  --soon: #ffc93c;
-  --soon-soft: #3b3018;
-  --now: #ff9a5c;
-  --now-soft: #3a2a22;
-  --late: #ff6b70;
-  --late-soft: #3c1d22;
+  --line: #2e2640;
+  --line-strong: #3b3150;
+  --shadow-s: 0 2px 8px rgba(0, 0, 0, 0.45);
+  --shadow-m: 0 6px 18px rgba(0, 0, 0, 0.45);
+  --shadow-pin: 0 6px 16px rgba(0, 0, 0, 0.5);
+  --shadow-cta: 0 6px 16px rgba(0, 0, 0, 0.45);
+  --ok: #8ee6a8;
+  --ok-soft: #173a28;
+  --night: #1c1236;
+  --map-ground: #241d2f;
+  --map-sea: #1d3a55;
+  --map-wave: #3d6286;
+  --map-park: #24412f;
+  --map-tree: #2f5c3d;
+  --map-square: #3a3026;
+  --map-street: #3b3249;
+  --map-route: #b8a3ff;
+  --map-label: #a99fbb;
+  --map-sea-label: #8fc2e3;
+  --art-sky: #2a2350;
+  --art-sea: #1d3a55;
+  --art-mountain: #4e3f78;
+  --art-hill: #24412f;
+  --art-tree: #2f7a47;
+  --art-cloud: #3b3249;
+  --art-line: #0b0810;
   color-scheme: dark;
 }

@@ -9,7 +9,9 @@
 | Build | Vite | Veloce, pubblicabile su qualsiasi hosting statico |
 | Dati | File JSON validati con zod | Un porto nuovo si aggiunge senza toccare il codice |
 | Test | Vitest | Le regole del giro e del rientro sono testate |
-| Indicazioni | Link a Google Maps / Apple Maps | Nessun costo di mappe nella prima versione |
+| Mappa | Disegnata da noi in SVG, dai dati del porto | Stile illustrato riconoscibile, nessun costo di mappe, funziona anche con poca rete |
+| Indicazioni | Link a Google Maps / Apple Maps | Navigazione passo passo senza costi |
+| Pubblicazione | GitHub Pages con GitHub Actions | Gratis, test automatici prima di ogni pubblicazione |
 
 ## Cartelle
 
@@ -22,11 +24,12 @@ src/
     geo.ts           distanze e minuti a piedi
     time.ts          orari e durate
     directions.ts    link per Google Maps e Apple Maps
+    map.ts           proiezione, zoom, raggruppamento dei luoghi sulla mappa
   data/ports/    un file JSON per porto
   i18n/          testi italiano e inglese
   state/         stato dell'app (orari, interessi, giro avviato)
-  screens/       Arrivo, Giro, Tappa, Timer
-  components/    icone illustrate e piccoli componenti
+  screens/       Esplora, Arrivo, Giro, Tappa, Timer
+  components/    icone illustrate, mappa (MapView) e piccoli componenti
   theme/         design token (colori, misure) chiaro e scuro
   lib/storage.ts salvataggio locale che non va mai in errore
 tests/           test automatici
@@ -48,6 +51,15 @@ Il percorso a piedi è stimato: distanza in linea d'aria × 1,3, a 75 metri al m
 - **In orario**: tutto il resto.
 
 La posizione è quella del GPS se l'utente lo consente, altrimenti l'ultima tappa raggiunta.
+
+## Come funziona la mappa
+
+- Le coordinate diventano metri su un piano (proiezione equirettangolare centrata sul terminal): su pochi km l'errore è sotto l'1%.
+- Il disegno (mare, isole, parchi, piazze, vie) sta nel file del porto, sotto `map`. Alberi e onde sono generati in automatico.
+- Le icone dei luoghi sono veri pulsanti sopra la mappa: si raggiungono anche da tastiera e con il lettore di schermo.
+- Quando due luoghi si sovrapporrebbero diventano un gruppo con il numero; toccandolo la mappa si avvicina.
+- Il luogo selezionato non finisce mai dentro un gruppo e non resta sotto la scheda in basso.
+- Il percorso del giro è una linea tratteggiata che unisce le tappe in ordine: indica la sequenza, non la strada esatta (per quella ci sono Google Maps e Apple Maps).
 
 ## Prossimi passi tecnici
 

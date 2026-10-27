@@ -1,6 +1,8 @@
 import { Icon } from '../components/Icon';
-import { Badge, loc, TopBar, WalkIcon } from '../components/ui';
+import { MapView } from '../components/MapView';
+import { Badge, BackButton, Hills, loc, WalkIcon } from '../components/ui';
 import { appleMapsUrl, googleMapsUrl } from '../domain/directions';
+import { walkMinutes } from '../domain/geo';
 import type { Port } from '../domain/schema';
 import { dict, t } from '../i18n';
 import type { CruiseActions, CruiseState } from '../state/useCruise';
@@ -8,40 +10,48 @@ import type { CruiseActions, CruiseState } from '../state/useCruise';
 export function Tappa({ port, s, a }: { port: Port; s: CruiseState; a: CruiseActions }) {
   const d = dict(s.lang);
   const index = s.plan.stops.findIndex((x) => x.poi.id === s.poiId);
-  const stop = s.plan.stops[index];
-  const poi = stop?.poi ?? port.pois.find((p) => p.id === s.poiId);
+  const poi = port.pois.find((p) => p.id === s.poiId);
   if (!poi) return null;
 
-  // Directions start from the previous stop of the tour (or the terminal), or from GPS when allowed.
+  // Directions start from GPS when allowed, otherwise from the previous stop of the walk or the ship.
   const from = s.position ?? (index > 0 ? s.plan.stops[index - 1]!.poi.coords : port.terminal.coords);
+  const walk = walkMinutes(from, poi.coords);
 
   return (
-    <>
-      <TopBar title={loc(poi.name, s.lang)} onBack={() => a.go(s.started ? 'timer' : 'giro')} backLabel={d.back} />
-      <main className="screen">
-        <section className="poi-hero">
-          <span className="poi-icon"><Icon name={poi.icon} size={88} /></span>
+    <div className="page">
+      <div className="place-hero">
+        <Hills height={210} />
+        <span className="place-icon"><Icon name={poi.icon} size={140} /></span>
+        <span className="place-back"><BackButton onClick={() => a.go(s.from)} label={d.back} /></span>
+      </div>
+
+      <main className="sheet">
+        <div className="stack-10">
           <h1>{loc(poi.name, s.lang)}</h1>
-          <div className="stop-tags">
+          <div className="tags">
             <Badge>{d.categories[poi.category]}</Badge>
-            {poi.hidden && <Badge tone="mint">{d.hidden}</Badge>}
+            {poi.hidden && <Badge tone="sun">{d.hidden}</Badge>}
             <Badge>{t(s.lang, 'visit', { n: poi.visitMinutes })}</Badge>
           </div>
-        </section>
+        </div>
 
         <p className="lead">{loc(poi.summary, s.lang)}</p>
 
         {poi.localTip && (
-          <section className="card tip">
-            <h2><Icon name="gemma" size={24} /> {d.localTip}</h2>
-            <p>{loc(poi.localTip, s.lang)}</p>
+          <section className="tip-card">
+            <span className="tile tile-mint"><Icon name="gemma" size={30} /></span>
+            <span className="stack-2">
+              <b>{d.localTip}</b>
+              <span>{loc(poi.localTip, s.lang)}</span>
+            </span>
           </section>
         )}
 
         {poi.curiosities.length > 0 && (
           <details className="card accordion">
             <summary>
-              <Icon name="curiosita" size={28} /> <span>{d.curiosities}</span>
+              <span className="tile tile-sun"><Icon name="curiosita" size={30} /></span>
+              <span>{d.curiosities}</span>
             </summary>
             <ul>
               {poi.curiosities.map((c) => <li key={c.it}>{loc(c, s.lang)}</li>)}
@@ -50,25 +60,38 @@ export function Tappa({ port, s, a }: { port: Port; s: CruiseState; a: CruiseAct
         )}
 
         {poi.ticket.required && (
-          <section className="card">
-            <h2>{d.ticket}</h2>
-            {poi.ticket.note && <p>{loc(poi.ticket.note, s.lang)}</p>}
+          <section className="row-card">
+            <span className="tile tile-sun"><Icon name="biglietto" size={30} /></span>
+            <span className="stack-2">
+              <b>{d.ticket}</b>
+              {poi.ticket.note && <span className="muted">{loc(poi.ticket.note, s.lang)}</span>}
+            </span>
           </section>
         )}
 
-        {!poi.verified && <p className="note warn">{d.toVerify}</p>}
-
-        <section className="directions">
+        <section className="stack-10">
           <h2>{d.directions}</h2>
-          {stop && (
-            <p className="muted"><WalkIcon /> {t(s.lang, 'walk', { n: stop.walkFromPrevMin })}</p>
-          )}
+          <MapView
+            className="mini-map"
+            port={port}
+            lang={s.lang}
+            label={d.placeMap}
+            pins={[{ poi }]}
+            fit={[from, poi.coords]}
+            route={[from, poi.coords]}
+            you={s.position}
+            interactive={false}
+            small
+          />
+          <p className="walk-line"><WalkIcon /> {t(s.lang, 'walk', { n: walk })}</p>
           <div className="row">
             <a className="cta" href={googleMapsUrl(from, poi.coords)} target="_blank" rel="noreferrer">Google Maps</a>
             <a className="ghost" href={appleMapsUrl(from, poi.coords)} target="_blank" rel="noreferrer">Apple Maps</a>
           </div>
         </section>
+
+        {!poi.verified && <p className="note warn">{d.toVerify}</p>}
       </main>
-    </>
+    </div>
   );
 }

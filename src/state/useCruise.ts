@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
 import { walkMinutes } from '../domain/geo';
-import { planTour, type Interests, type Level, type Plan } from '../domain/planner';
+import { planTour, type Interests, type Plan } from '../domain/planner';
 import { returnStatus, type ReturnStatus } from '../domain/returnStatus';
 import type { Category, Coords, Port } from '../domain/schema';
 import { minutesOfDay, parseHHMM, toInputTime, type Minutes } from '../domain/time';
 import type { Lang } from '../i18n';
 import { storage } from '../lib/storage';
 
-export type Screen = 'arrivo' | 'giro' | 'tappa' | 'timer';
+export type Screen = 'esplora' | 'arrivo' | 'giro' | 'tappa' | 'timer';
 
 interface Saved {
   lang: Lang;
@@ -15,6 +15,8 @@ interface Saved {
   allAboard: string;
   hours: number;
   interests: Interests;
+  /** The guest has asked for a walk at least once. */
+  planned: boolean;
   started: boolean;
   demoOffset: Minutes;
 }
@@ -30,6 +32,7 @@ function defaults(): Saved {
     allAboard: toInputTime(roundTo10(now + 350)),
     hours: 4,
     interests: {},
+    planned: false,
     started: false,
     demoOffset: 0,
   };
@@ -42,6 +45,8 @@ function aboardAfter(start: Minutes, aboard: Minutes): Minutes {
 
 export interface CruiseState extends Saved {
   screen: Screen;
+  /** Where the place detail was opened from, for the back button. */
+  from: Screen;
   poiId: string | null;
   startMin: Minutes;
   allAboardMin: Minutes;
@@ -62,7 +67,8 @@ export interface CruiseActions {
   setStart(value: string): void;
   setAllAboard(value: string): void;
   setHours(hours: number): void;
-  setInterest(category: Category, level: Level): void;
+  toggleInterest(category: Category): void;
+  planTour(): void;
   startTour(): void;
   demoForward(): void;
   locate(): void;
@@ -80,6 +86,7 @@ export function useCruise(port: Port): [CruiseState, CruiseActions] {
   });
   const [screen, setScreen] = useState<Screen>(saved.started ? 'timer' : 'arrivo');
   const [poiId, setPoiId] = useState<string | null>(null);
+  const [from, setFrom] = useState<Screen>('esplora');
   const [position, setPosition] = useState<Coords | null>(null);
   const [clock, setClock] = useState(() => minutesOfDay(new Date()));
 
@@ -120,6 +127,7 @@ export function useCruise(port: Port): [CruiseState, CruiseActions] {
 
   const actions: CruiseActions = {
     go(next, id) {
+      if (next === 'tappa' && screen !== 'tappa') setFrom(screen);
       setScreen(next);
       if (id !== undefined) setPoiId(id);
       window.scrollTo({ top: 0 });
@@ -128,8 +136,18 @@ export function useCruise(port: Port): [CruiseState, CruiseActions] {
     setStart: (start) => parseHHMM(start) != null && patch({ start, started: false, demoOffset: 0 }),
     setAllAboard: (allAboard) => parseHHMM(allAboard) != null && patch({ allAboard, started: false }),
     setHours: (h) => patch({ hours: h }),
-    setInterest: (category, level) =>
-      setSaved((s) => ({ ...s, interests: { ...s.interests, [category]: level }, started: false })),
+    // A chosen interest weighs double; the others still count, so the walk is never empty.
+    toggleInterest: (category) =>
+      setSaved((s) => {
+        const interests = { ...s.interests };
+        if (interests[category] === 2) delete interests[category];
+        else interests[category] = 2;
+        return { ...s, interests, started: false };
+      }),
+    planTour() {
+      patch({ planned: true });
+      actions.go('giro');
+    },
     startTour() {
       patch({ started: true, demoOffset: 0 });
       actions.go('timer');
@@ -148,6 +166,7 @@ export function useCruise(port: Port): [CruiseState, CruiseActions] {
     ...saved,
     hours,
     screen,
+    from,
     poiId,
     startMin,
     allAboardMin,
